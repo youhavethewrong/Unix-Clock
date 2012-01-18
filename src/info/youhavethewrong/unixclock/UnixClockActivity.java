@@ -23,7 +23,7 @@ import android.widget.TextView;
  * Display modes: decimal, hex.
  * Add custom font.
  * Add menu for colors: green on black, amber on gray, black on white.
- * Add menu for about.
+ * Add menu for about. -> check yamba baseActivity() for guide
  * Add menu for font choice.
  * Add desktop Widget.
  */
