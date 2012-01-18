@@ -15,7 +15,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
-import android.widget.EditText;
+import android.widget.TextView;
 
 public class UnixClockActivity extends Activity implements Runnable {
 	
@@ -35,31 +35,12 @@ public class UnixClockActivity extends Activity implements Runnable {
 	};
 	
 	// Our little clock widget
-	EditText et;
+	TextView et;
 	
-	protected void onPause() {
-		super.onPause();
-		updateTime();
-	}
-
-	protected void onRestart() {
-		super.onRestart();
-		updateTime();
-	}
-
-	protected void onResume() {
-		super.onResume();
-		updateTime();
-	}
-
-	protected void onStart() {
-		super.onStart();
-		updateTime();
-	}
-
+	// no longer visible to the user.  will be restarted or destroyed.
 	protected void onStop() {
 		super.onStop();
-		updateTime();
+		// stop running our thread?
 	}
 
     public void onCreate(Bundle savedInstanceState) {
@@ -69,7 +50,7 @@ public class UnixClockActivity extends Activity implements Runnable {
         setContentView(R.layout.main);
         
         // grab a handle on the EditText widget
-        et = (EditText)findViewById(R.id.unixTime);
+        et = (TextView)findViewById(R.id.unixTime);
         
         // if our thread doesn't exist yet, create it and get it spinning
         if (runner == null) {
@@ -79,7 +60,10 @@ public class UnixClockActivity extends Activity implements Runnable {
     }
     
     public void updateTime() {
+    	// just want the seconds, not the millis
         String utime = ""+(System.currentTimeMillis() / 1000l);
+        
+        // write out our new time to the EditText
         et.setText(utime);    	
     }
 

@@ -4,12 +4,13 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <EditText
+    <TextView
         android:id="@+id/unixTime"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:inputType="number" 
         android:textColor="#00ff00"
+        android:textSize="55sp"
+        android:gravity="center_horizontal|center"
         android:background="@android:color/background_dark"/>
     
     <TextView
