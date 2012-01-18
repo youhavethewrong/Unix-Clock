@@ -10,7 +10,6 @@
         android:layout_height="wrap_content"
         android:inputType="number" 
         android:textColor="#00ff00"
-        android:textColorHighlight="#22cc55"
         android:background="@android:color/background_dark"/>
     
     <TextView
