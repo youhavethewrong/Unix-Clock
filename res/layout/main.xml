@@ -4,17 +4,19 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hello" />
-
     <EditText
         android:id="@+id/unixTime"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:inputType="number" >
-        <requestFocus />
-    </EditText>
+        android:inputType="number" 
+        android:textColor="#00ff00"
+        android:textColorHighlight="#22cc55"
+        android:background="@android:color/background_dark"/>
+    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/explain" 
+        android:textColor="#00ff00"/>
 
 </LinearLayout>

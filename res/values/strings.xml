@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="hello">Hello World, UnixClockActivity!</string>
-    <string name="app_name">UnixClock</string>
-
+   <string name="app_name">UnixClock</string>
+   <string name="explain">Seconds since January 1, 1970 00:00:00 UTC</string>
 </resources>
