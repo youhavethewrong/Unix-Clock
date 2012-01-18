@@ -17,6 +17,14 @@ import android.os.Handler;
 import android.util.Log;
 import android.widget.TextView;
 
+/**
+ * Need to add onTouchListener to notice when a user touches the TextView.
+ * When TextView is touched, rotate through display modes.
+ * Display modes: decimal, hex.
+ * Add custom font.
+ * Add menu for themes: green on black, amber on gray, black on white.
+ */
+
 public class UnixClockActivity extends Activity implements Runnable {
 	
 	static final String TAG = "UnixClockActivity";
