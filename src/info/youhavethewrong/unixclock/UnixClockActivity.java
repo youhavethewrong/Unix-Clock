@@ -22,7 +22,10 @@ import android.widget.TextView;
  * When TextView is touched, rotate through display modes.
  * Display modes: decimal, hex.
  * Add custom font.
- * Add menu for themes: green on black, amber on gray, black on white.
+ * Add menu for colors: green on black, amber on gray, black on white.
+ * Add menu for about.
+ * Add menu for font choice.
+ * Add desktop Widget.
  */
 
 public class UnixClockActivity extends Activity implements Runnable {
