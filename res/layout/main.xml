@@ -9,4 +9,12 @@
         android:layout_height="wrap_content"
         android:text="@string/hello" />
 
+    <EditText
+        android:id="@+id/unixTime"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number" >
+        <requestFocus />
+    </EditText>
+
 </LinearLayout>

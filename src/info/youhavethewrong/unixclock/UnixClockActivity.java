@@ -3,17 +3,21 @@ package info.youhavethewrong.unixclock;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
-
-import java.lang.System;
+import android.widget.EditText;
 
 public class UnixClockActivity extends Activity {
-	static final String TAG = "UnixClock";
+	static final String TAG = "UnixClockActivity";
 	
-    /** Called when the activity is first created. */
-    @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    	super.onCreate(savedInstanceState);
+    	Log.d(TAG, "onCreate()");
         setContentView(R.layout.main);
-        Log.d(TAG, "~~~~~~~~~~~~~~~~~"+System.currentTimeMillis()+"||||||||||");
+        updateTime();
+    }
+    
+    public void updateTime() {
+        String utime = ""+System.currentTimeMillis();
+        EditText et = (EditText)findViewById(R.id.unixTime);
+        et.setText(utime);    	
     }
 }
