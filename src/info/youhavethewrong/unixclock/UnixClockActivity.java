@@ -1,5 +1,16 @@
 package info.youhavethewrong.unixclock;
 
+/**
+ * I chose to write this simple app to get the hang of UIs and threads.
+ * 
+ * This Activity was inspired by the following URLs:
+ * http://stackoverflow.com/questions/2830699/simple-android-binary-text-clock
+ * http://stackoverflow.com/questions/732034/getting-unixtime-in-java
+ * http://developer.android.com/guide/topics/fundamentals/processes-and-threads.html
+ * 
+ * Began 2012.01.17
+ */
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
