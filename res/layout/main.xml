@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/clockLayout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:background="@color/black" >
 
     <TextView
         android:id="@+id/unixTime"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textColor="#00ff00"
+        android:textColor="@color/green"
         android:textSize="55sp"
         android:gravity="center_horizontal|center"
-        android:typeface="monospace"
-        android:background="@android:color/background_dark"/>
+        android:typeface="monospace"/>
     
     <TextView
+        android:id="@+id/explainId"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/explain" 
-        android:textColor="#00ff00"/>
+        android:textColor="@color/green"/>
 
 </LinearLayout>

@@ -5,4 +5,9 @@
    <string name="aboutUnixClock">About</string>
    <string name="clockFont">Font</string>
    <string name="colorSchemeTitle">Theme</string>
+   
+   <color name="amber">#FFBA00</color>
+   <color name="grey">#1a1a1a</color>
+   <color name="green">#00FF00</color>
+   <color name="black">#000</color>
 </resources>
