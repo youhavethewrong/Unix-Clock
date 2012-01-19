@@ -87,14 +87,14 @@ public class UnixClockActivity extends Activity implements Runnable {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		
 		switch (item.getItemId()) {
-		case R.id.colorScheme:
-			this.cycleColorScheme();
-			Log.d(TAG, "colorScheme menu item");
-			break;
-		case R.id.aboutUnixClock:
-			// display about splash
-			Log.d(TAG, "aboutUnixClock menu item");
-			break;
+			case R.id.colorScheme:
+				this.cycleColorScheme();
+				Log.d(TAG, "colorScheme menu item");
+				break;
+			case R.id.aboutUnixClock:
+				// display about splash
+				Log.d(TAG, "aboutUnixClock menu item");
+				break;
 		}
 		return true;
 	}
@@ -126,7 +126,7 @@ public class UnixClockActivity extends Activity implements Runnable {
     	// just want the seconds, not the millis
         String utime = ""+(System.currentTimeMillis() / 1000l);
         
-        // write out our new time to the EditText
+        // write out our new time to the TextView
         et.setText(utime);    	
     }
     
