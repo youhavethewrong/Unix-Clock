@@ -11,7 +11,7 @@
         android:textColor="#00ff00"
         android:textSize="55sp"
         android:gravity="center_horizontal|center"
-        android:typeface=3
+        android:typeface="monospace"
         android:background="@android:color/background_dark"/>
     
     <TextView
