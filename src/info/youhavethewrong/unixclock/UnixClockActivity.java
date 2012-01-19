@@ -26,9 +26,9 @@ import android.widget.TextView;
  * When TextView is touched, rotate through display modes.
  * Display modes: decimal, hex.
  * Add custom font.
- * Add menu for colors: green on black, amber on gray, black on white.
+ * Add menu for colors: green on black, amber on gray.
+ * * Save theme choice.
  * Add menu for about. -> check yamba baseActivity() for guide
- * Add menu for font choice.
  * Add desktop Widget.
  */
 
@@ -62,12 +62,13 @@ public class UnixClockActivity extends Activity implements Runnable {
         
         // grab a handle for the LinearLayout
         ll = (LinearLayout)findViewById(R.id.clockLayout);
-        // grab a handle on the clock TextView widget
+        // grab handles for the clock TextView widgets
         et = (TextView)findViewById(R.id.unixTime);
         ex = (TextView)findViewById(R.id.explainId);
         
         Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/Glass_TTY_VT220.ttf");
         et.setTypeface(tf);
+        ex.setTypeface(tf);
         
         // if our thread doesn't exist yet, create it and get it spinning
         if (runner == null) {
@@ -89,10 +90,6 @@ public class UnixClockActivity extends Activity implements Runnable {
 		case R.id.colorScheme:
 			this.cycleColorScheme();
 			Log.d(TAG, "colorScheme menu item");
-			break;
-		case R.id.clockFont:
-			// call font picker
-			Log.d(TAG, "clockFont menu item");
 			break;
 		case R.id.aboutUnixClock:
 			// display about splash

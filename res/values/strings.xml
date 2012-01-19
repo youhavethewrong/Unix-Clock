@@ -3,7 +3,6 @@
    <string name="app_name">UnixClock</string>
    <string name="explain">Seconds since January 1, 1970 00:00:00 UTC</string>
    <string name="aboutUnixClock">About</string>
-   <string name="clockFont">Font</string>
    <string name="colorSchemeTitle">Theme</string>
    
    <color name="amber">#FFBA00</color>

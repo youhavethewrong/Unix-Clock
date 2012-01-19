@@ -3,9 +3,6 @@
     <item android:id="@+id/colorScheme" android:title="@string/colorSchemeTitle"
      android:icon="@android:drawable/ic_menu_edit" />
 
-    <item android:id="@+id/clockFont" android:title="@string/clockFont"
-     android:icon="@android:drawable/ic_menu_sort_alphabetically" />
-
     <item android:id="@+id/aboutUnixClock" android:title="@string/aboutUnixClock"
      android:icon="@android:drawable/ic_menu_info_details" />
 </menu>
