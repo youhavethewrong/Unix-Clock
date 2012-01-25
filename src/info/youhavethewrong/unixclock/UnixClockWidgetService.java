@@ -1,5 +1,11 @@
 package info.youhavethewrong.unixclock;
 
+/*
+ * Don't think I need this service if I have a single view on my widget.
+ * Also, don't want this unless I have to have it 'cause it forces
+ * me to use API Level 11.
+ */
+
 import android.content.Context;
 import android.content.Intent;
 import android.widget.RemoteViews;

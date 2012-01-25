@@ -24,10 +24,6 @@
             </intent-filter>
             <meta-data android:name="android.appwidget.provider"
                 android:resource="@xml/unixclockwidgetinfo" />
-        </receiver>
-        
-        <service android:name="UnixClockWidgetService" 
-            android:permission="android.permission.BIND_REMOTEVIEWS"
-            android:exported="false"/>    
+        </receiver> 
 	</application>
 </manifest>
