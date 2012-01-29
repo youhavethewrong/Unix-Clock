@@ -54,11 +54,7 @@ public class UnixClockWidgetProvider extends AppWidgetProvider {
         for (int i=0; i<N; i++) {
             int appWidgetId = appWidgetIds[i];
             
-            // Create an Intent to launch UnixClockActivity
-            Intent intent = new Intent(context, UnixClockActivity.class);
-            
-            // need to somehow get UnixClockActivity.updateTime() to update my textview
-            /*
+            /** need to somehow get UnixClockActivity.updateTime() to update my textview
              * Maybe create a custom intent UPDATE_TIME
              * - onReceive, call UnixClockActivity.getTime() or something?
              * - set our TextView's text = the results from getTime

@@ -33,7 +33,7 @@ import android.widget.TextView;
  */
 
 public class UnixClockActivity extends Activity implements Runnable {
-	
+	// debug/logcat tag for this class
 	static final String TAG = "UnixClockActivity";
 	
 	// the handler controls the thread
@@ -42,17 +42,21 @@ public class UnixClockActivity extends Activity implements Runnable {
 	// the thread will do what it's told by the handler
 	Thread runner;
 	
-	// this is what the thread does
-	final Runnable update_ui = new Runnable() {
-		public void run() {
-			updateTime();
-		};
-	};
-	
 	// handles for parts of our ui
 	TextView et;
 	TextView ex;
 	LinearLayout ll;
+	
+	// this is what the thread does
+	final Runnable update_ui = new Runnable() {
+		public void run() {
+			// grab the current unix time
+			String utime = getTime();
+			
+	        // write out our new time to the TextView
+	        et.setText(utime); 
+		};
+	};
 	
     public void onCreate(Bundle savedInstanceState) {
     	super.onCreate(savedInstanceState);
@@ -122,12 +126,9 @@ public class UnixClockActivity extends Activity implements Runnable {
 		}
 	}
 	
-    public void updateTime() {
+    public String getTime() {
     	// just want the seconds, not the millis
-        String utime = ""+(System.currentTimeMillis() / 1000l);
-        
-        // write out our new time to the TextView
-        et.setText(utime);    	
+        return ""+(System.currentTimeMillis() / 1000l);
     }
     
     public void cycleColorScheme() {
@@ -135,15 +136,18 @@ public class UnixClockActivity extends Activity implements Runnable {
     	int curText = et.getCurrentTextColor();
     	int amber = ll.getResources().getColor(R.color.amber);
     	int green = ll.getResources().getColor(R.color.green);
-    	int black = ll.getResources().getColor(R.color.black);
-    	int grey = ll.getResources().getColor(R.color.grey);
     	
+    	/* seems a little weird to declare colors separately, but this does save
+    	 * a whole 4 bytes of memory + a function call
+    	 */
     	if(curText == amber) {
+        	int black = ll.getResources().getColor(R.color.black);
     		et.setTextColor(green);
     		ex.setTextColor(green);
     		ll.setBackgroundColor(black);
     	}
     	else {
+        	int grey = ll.getResources().getColor(R.color.grey);
     		et.setTextColor(amber);
     		ex.setTextColor(amber);
     		ll.setBackgroundColor(grey);
