@@ -1,6 +1,5 @@
 package info.youhavethewrong.unixclock;
 
-import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
@@ -41,26 +40,37 @@ public class UnixClockWidgetProvider extends AppWidgetProvider {
 		// android 1.5 due to onDelete bugs
 	}
 
-	@Override
+	/**
+	 * This is called every update period, as well as the first time a user adds
+	 * this widget.  It isn't called the first time a user adds the widget IF we ever
+	 * implement a configuration activity.
+	 */
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
 			int[] appWidgetIds) {
 		final int N = appWidgetIds.length;
 
 		// Ask UnixClockActivity for an update?
-        // Perform this loop procedure for each App Widget that belongs to this provider
+        // do this for every App Widget under this provider that the user has added
         for (int i=0; i<N; i++) {
             int appWidgetId = appWidgetIds[i];
             
             // Create an Intent to launch UnixClockActivity
             Intent intent = new Intent(context, UnixClockActivity.class);
             
-            // Get the layout for the App Widget and attach an on-click listener
-            // to the button
-            RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
-
-            // Tell the AppWidgetManager to perform an update on the current app widget
+            // need to somehow get UnixClockActivity.updateTime() to update my textview
+            /*
+             * Maybe create a custom intent UPDATE_TIME
+             * - onReceive, call UnixClockActivity.getTime() or something?
+             * - set our TextView's text = the results from getTime
+             */
+            
+            // get the layout for this App Widget
+            RemoteViews views = new RemoteViews(context.getPackageName(), 
+            		R.layout.widget_layout);
+            
+            // tell the appWidgetManager to perform an update on the current App Widget
             appWidgetManager.updateAppWidget(appWidgetId, views);
-
         }
+        super.onUpdate(context, appWidgetManager, appWidgetIds);
 	}
 }
