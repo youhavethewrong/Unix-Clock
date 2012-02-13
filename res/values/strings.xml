@@ -9,4 +9,6 @@
    <color name="grey">#1a1a1a</color>
    <color name="green">#00FF00</color>
    <color name="black">#000</color>
+   
+   <string name="widgetTestText">Unix Clock</string>
 </resources>

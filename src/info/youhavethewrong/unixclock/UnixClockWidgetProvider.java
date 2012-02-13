@@ -63,6 +63,8 @@ public class UnixClockWidgetProvider extends AppWidgetProvider {
             // get the layout for this App Widget
             RemoteViews views = new RemoteViews(context.getPackageName(), 
             		R.layout.widget_layout);
+            UnixClockActivity uc = new UnixClockActivity();
+            views.setTextViewText(R.id.widgetTextView, uc.getTime());
             
             // tell the appWidgetManager to perform an update on the current App Widget
             appWidgetManager.updateAppWidget(appWidgetId, views);
